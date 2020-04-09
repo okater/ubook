@@ -9,8 +9,8 @@
   --color-grey-dark-1: #333;
   --color-grey-dark-2: #777;
   --color-grey-dark-3: #999;
-  --shadow-dark: 0 2rem 6rem rgba(0,0,0,.3);
-  --shadow-light: 0 2rem 5rem rgba(0,0,0,.06);
+  --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+  --shadow-light: 0 2rem 5rem rgba(0, 0, 0, 0.06);
   --line: 1px solid var(--color-grey-light-2); }
 
 * {
@@ -481,21 +481,25 @@ body {
   color: #fff;
   position: relative;
   overflow: hidden;
-  height: 60px;
   cursor: pointer; }
   .btn > * {
     display: inline-block;
     height: 100%;
     width: 100%;
-    transition: all 1s; }
+    transition: all .2s; }
   .btn__visible {
-    padding: 2rem 7.5rem;
-    border-bottom: 1px solid grey; }
+    padding: 2rem 7.5rem; }
   .btn__invisible {
-    line-height: 60px;
-    transform: rotateX(90deg);
-    padding: 2rem auto; }
+    position: absolute;
+    padding: 2rem 0;
+    left: 0;
+    top: -100%; }
+  .btn:hover {
+    background-image: linear-gradient(to left, var(--color-primary-light), var(--color-primary-dark)); }
   .btn:hover .btn__visible {
-    transform: translateY(-100%) rotateX(90deg); }
+    transform: translateY(100%); }
   .btn:hover .btn__invisible {
-    transform: translateY(-100%) rotateX(0deg); }
+    top: 0; }
+  .btn:focus {
+    outline: none;
+    animation: pulsate 1s infinite; }
